@@ -7,11 +7,15 @@ fn main() {
     let mut counter = 1;
     let mut dot_rgb: [u8; 3] = [0, 0, 0];
 
+    let mut version: u8 = 0;
     let mut width: usize = 0;
 
     for i in &image {
         match counter {
             1 => {
+                version = *i;
+            }
+            2 => {
                 width = *i as usize;
             }
             _ => {}
